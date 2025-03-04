@@ -1,0 +1,62 @@
+/* Global Styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+/* App Container */
+.container {
+  background: white;
+  max-width: 300px;
+  margin: 50px auto;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+}
+
+h1 {
+  color: #333;
+}
+
+.count {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 20px 0;
+}
+
+/* Button Styles */
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.btn {
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.increase {
+  background-color: #28a745;
+  color: white;
+}
+
+.decrease {
+  background-color: #dc3545;
+  color: white;
+}
+
+.reset {
+  background-color: #007bff;
+  color: white;
+}
+
+.btn:hover {
+  opacity:0.8;
+}
