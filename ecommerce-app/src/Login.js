@@ -1,32 +1,30 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "./App.css";
 
-function Login({ setIsAuthenticated }) {
-  const [username, setUsername] = useState("");
+const Login = ({ setIsAuthenticated }) => {
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
   const navigate = useNavigate();
 
-  const handleLogin = (e) => {
-    e.preventDefault();
-    if (username === "kasiraj1504@gmail.com" && password === "password") {
+  const handleLogin = () => {
+    if (email === "user@example.com" && password === "password") {
       setIsAuthenticated(true);
-      navigate("/products"); // Redirect to Products page
+      navigate("/home");
     } else {
-      alert("Invalid credentials!");
+      setError("Invalid credentials");
     }
   };
 
   return (
-    <div className="container">
+    <div className="login-container">
       <h2>Login</h2>
-      <form onSubmit={handleLogin}>
-        <input type="email" placeholder="Username" value={username} onChange={(e) => setUsername(e.target.value)} required />
-        <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} required />
-        <button type="submit">Login</button>
-      </form>
+      <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
+      <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
+      {error && <p className="error-message">{error}</p>}
+      <button onClick={handleLogin}>Login</button>
     </div>
   );
-}
+};
 
 export default Login;
